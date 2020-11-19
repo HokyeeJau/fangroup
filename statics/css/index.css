@@ -1,0 +1,110 @@
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+    margin-top: 20px;
+  }
+
+.toc-wrapper {
+	margin-top: 42px;
+	position: relative;
+}
+.pinned {
+    position: fixed !important;
+}
+
+ul.table-of-contents {
+    margin-top: 0;
+    padding-top: 48px;
+}
+
+.caption {
+	font-size: 1.25rem;
+	font-weight: 300;
+	margin-bottom: 30px;
+}
+
+.caption p{
+	padding: 0;
+	-webkit-font-smoothing:antialiased;
+}
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.content{
+  /*padding-top: 66px;*/
+  background-color: #fff;
+}
+
+.welcome{
+  min-height: 300px;
+  background-color: #90caf9;
+  background-image: url("../rsc/Heetube/bg/2020-08-bg.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: top;
+}
+
+.stretch-items{
+  align-items: stretch!important;
+  display: flex!important;
+}
+
+@media only screen and (min-width: 768px){
+  .col-md-4 {
+    -webkit-box-flex: 0;
+    flex: 0 0 33.3333333%;
+    max-width: 33.333333%;
+  }
+}
+
+.card{
+  min-width: 200px;
+}
+
+.intro {
+  height: 250px;
+  display: grid;
+  min-width: 180px;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+p .caption a{
+  color: #2db28a;
+}
+
+h1 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.yellow_text{
+  color:#ffab40;
+}
+
+.card-content h5 {
+  text-align: center;
+  height: 60px;
+  margin-bottom: 50px;
+}
+
+.intro:hover, .contributor:hover{
+  box-shadow: 0 24px 30px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.page{
+  width: 90%;
+}
