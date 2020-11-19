@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="{% static "materialize/css/materialize.min.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static "css/jazz-timeline.css" %}">
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" ></script>
+	<script type="text/javascript" src="{% static "js/index.js" %}">
+
+	</script>
+	<!-- <link href="{% static "js/skrollr.min.js" %}"> -->
+    <title>行程管理</title>
+    </head>
+
+<body style ="display: flex;min-height: 100vh;flex-direction: column;"data-new-gr-c-s-check-loaded="14.981.0">
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+      <!-- Header -->
+	<header>
+		<nav>
+			<!-- Top Bar -->
+			<div class="nav-wrapper container">
+				<a href="{% url 'index' %}" class="brand-logo left">主站</a>
+			   <ul class="right hide-on-med-and-down">
+				  <li><a href="{% url 'ytb' %}">油管相关</a></li>
+				   <li><a href="{% url 'video' %}">熟肉分享</a></li>
+				  <li><a href="{% url 'schedule' %}">行程安排</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<main>
+		<div class="container custom-bg">
+			<div class="card-panel teal lighten-2">
+				<h3>某只希最近的行程安排</h3>
+				<p>最新更新到 {{ update_time }} </p>
+			</div>
+			<div id="axis">
+				<div class="jazz-timeline-wrapper">
+		            <div class="jazz-timeline  multiline-timeline ultimate-style">
+						{{ timeline|safe }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+      <!-- Footer of the page -->
+	<footer class="page-footer">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col l6 s12">
+	        <p class="grey-text text-lighten-4"><a href="http://beian.miit.gov.cn/">备案号: 粤ICP备2020094794号-1</a></p>
+	        <p class="grey-text text-lighten-4">Mail: hokyeejau@foxmail.com</p>
+	      </div>
+	      <div class="col l4 offset-l2 s12">
+	        <ul>
+	          <li><a class="grey-text text-lighten-3" href="#!">本网站仅作资源分享</a></li>
+			  <li><p class="white-text text-lighen-3">你的IP地址是:{{ ip }} </p></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </div><!--
+	  <div class="footer-copyright">
+	    <div class="container">
+	    © 2014 Copyright 文本
+	    <a class="grey-text text-lighten-4 right" href="#!">更多链接</a>
+	    </div>
+	  </div> -->
+	</footer>
+
+</body>
+</html>

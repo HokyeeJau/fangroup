@@ -1,0 +1,17 @@
+{% block timeline-card %}
+<div class="timeline-post turqoise-post turqoise-trail">
+	<div class="timeline-meta">
+		<div class="meta-details">{{ sche_date }}</div>
+	</div>
+	<div class="timeline-icon icon-dot">
+		<div class="timeline-bar"></div>
+	</div>
+	<div class="timeline-content">
+		<h2 class="content-title turqoise-title"> {{ sche_title }} </h2>
+		<div class="content-details">
+			<p>{{ sche_content }}</p>
+			<p>{{ sche_url }}</p>
+		</div>
+	</div><!-- timeline content -->
+</div><!-- .timeline-post -->
+{% endblock %}

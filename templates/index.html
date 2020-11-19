@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+	<meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="{% static "materialize/css/materialize.min.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Kim Heechul资料分享</title>
+    </head>
+
+<body style ="display: flex;min-height: 100vh;flex-direction: column;"data-new-gr-c-s-check-loaded="14.981.0">
+	<header>
+		<nav>
+			<div class="nav-wrapper container">
+				 <a href="{% url 'index' %}" class="brand-logo left">主站</a>
+				 <ul class="right hide-on-med-and-down">
+				    <li><a href="{% url 'ytb' %}">油管相关</a></li>
+                    <li><a href="{% url 'video' %}">熟肉分享</a></li>
+				    <li><a href="{% url 'schedule' %}">行程安排</a></li>
+				  </ul>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<div class="container" style="width: 90%">
+            <h1 class="header center-align" style="color: #DD4A68;">你来啦</h1>
+            <p class="caption center-align">欢迎来到<a href="https://weibo.com/u/6567264854">聪唧唧</a>的金希澈资源分享网站，在这里，你将能分享到</p>
+
+            <div class="row">
+                  <div class="col s4">
+                    <div class="card-panel blue-grey intro">
+                      	<div class="card-content white-text">
+            	              <h5 class="card-title justify-center">Heetube的视频封面、头像与背景</h5>
+            	              <p class="yellow_text">希兔比的视频封面、社区的可爱动图、以及曾经出现过的背景与头像，心动吗？</p>
+            	        </div>
+                    </div>
+                  </div>
+
+				      <div class="col s4">
+				        <div class="card-panel blue-grey intro">
+				          	<div class="card-content white-text">
+					              <h5 class="card-title justify-center">每月的行程汇总</h5>
+					              <p class="yellow_text">帮你检查漏掉的综艺节目，查看你哥每月辉煌的业绩！</p>
+					        </div>
+				        </div>
+				      </div>
+
+				      <div class="col s4">
+				        <div class="card-panel blue-grey intro">
+				          	<div class="card-content white-text">
+					              <h5 class="card-title justify-center">熟肉</h5>
+					              <p class="yellow_text">还在为听不懂看不懂却心急没有新综艺的片源吗？</p>
+					        </div>
+				        </div>
+				      </div>
+				</div>
+
+					<div class="section scrollspy">
+						<h3 class="header center-align" style="color: #DD4A68;">贡献者</h3>
+						<p class="caption center-align">下列站子与人员为本网站主要贡献者</p>
+						<h4 class="header center-align"  style="color: #DD4A68;">站子</h4>
+						<div class="row">
+					        <div class="col s12 m6">
+					          <div class="card z-depth-3 blue-grey darken-1 contributor">
+					            <div class="card-content white-text">
+					              <span class="card-title">想打想流KimHeeChul</span>
+					              <p>视频熟肉</p>
+					            </div>
+					            <div class="card-action">
+					              <a href="https://weibo.com/u/6205417173">微博</a>
+					              <a href="https://github.com/xdxl-khc">GitHub</a>
+					            </div>
+					          </div>
+					        </div>
+					        <div class="col s12 m6">
+					          <div class="card z-depth-3 blue-grey darken-1 contributor">
+					            <div class="card-content white-text">
+					              <span class="card-title">HEECHULISM金希澈安利博</span>
+					              <p>行程总结</p>
+					            </div>
+					            <div class="card-action">
+					              <a href="https://weibo.com/u/7037287896">微博</a>
+					            </div>
+					          </div>
+					        </div>
+					      </div>
+					</div>
+					<div class="section scrollspy">
+						<h4 class="header center-align"  style="color: #DD4A68;">个人</h4>
+						<div class="row">
+					        <div class="col s12 m6">
+					          <div class="card z-depth-3 blue-grey darken-1 contributor">
+					            <div class="card-content white-text">
+					              <span class="card-title">聪唧唧</span>
+					              <p>油管图片</p>
+					            </div>
+					            <div class="card-action">
+					              <a href="https://weibo.com/u/6567264854">微博</a>
+					            </div>
+					          </div>
+					        </div>
+					      </div>
+					</div>
+
+		</div>
+
+	</main>
+
+      <!-- Footer of the page -->
+	<footer class="page-footer">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col l6 s12">
+	        <p class="grey-text text-lighten-4"><a href="http://beian.miit.gov.cn/" style="color:#fff">备案号: 粤ICP备2020094794号-1</a></p>
+	        <p class="grey-text text-lighten-4">Mail: hokyeejau@foxmail.com</p>
+	      </div>
+	      <div class="col l4 offset-l2 s12">
+	        <ul>
+	          <li><a class="grey-text text-lighten-3" href="#!">本网站仅作资源分享</a></li>
+              <li><p class="white-text text-lighen-3">你的IP地址是:{{ ip }} </p></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </div><!--
+	  <div class="footer-copyright">
+	    <div class="container">
+	    © 2014 Copyright 文本
+	    <a class="grey-text text-lighten-4 right" href="#!">更多链接</a>
+	    </div>
+	  </div> -->
+	</footer>
+
+</body>
+</html>
