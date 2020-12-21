@@ -8,19 +8,26 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "materialize/js/materialize.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/clipboard.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/index.js" %}">
+
+    </script>
     <title>Kim Heechul资料分享</title>
     </head>
 
 <body style ="display: flex;min-height: 100vh;flex-direction: column;"data-new-gr-c-s-check-loaded="14.981.0">
 	<header>
 		<nav>
+			<!-- Top Bar -->
 			<div class="nav-wrapper container">
-				 <a href="{% url 'index' %}" class="brand-logo left">主站</a>
-				 <ul class="right hide-on-med-and-down">
-				    <li><a href="{% url 'ytb' %}">油管相关</a></li>
-                    <li><a href="{% url 'video' %}">熟肉分享</a></li>
-				    <li><a href="{% url 'schedule' %}">行程安排</a></li>
-				  </ul>
+				<a href="{% url 'index' %}" class="brand-logo left">主站</a>
+			   	<ul class="right hide-on-med-and-down">
+				  	<li><a href="{% url 'ytb' %}">油管相关</a></li>
+				   	<li><a href="{% url 'video' %}">熟肉分享</a></li>
+				  	<li><a href="{% url 'schedule' %}">行程安排</a></li>
+				</ul>
 			</div>
 		</nav>
 	</header>
@@ -29,35 +36,44 @@
 		<div class="container" style="width: 90%">
             <h1 class="header center-align" style="color: #DD4A68;">你来啦</h1>
             <p class="caption center-align">欢迎来到<a href="https://weibo.com/u/6567264854">聪唧唧</a>的金希澈资源分享网站，在这里，你将能分享到</p>
-
-            <div class="row">
-                  <div class="col s4">
-                    <div class="card-panel blue-grey intro">
-                      	<div class="card-content white-text">
-            	              <h5 class="card-title justify-center">Heetube的视频封面、头像与背景</h5>
-            	              <p class="yellow_text">希兔比的视频封面、社区的可爱动图、以及曾经出现过的背景与头像，心动吗？</p>
-            	        </div>
+              <div class="row">
+                <div class="col s12 m4">
+                  <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">Heetube的视频封面、头像与背景</span>
+                      <p>希兔比的视频封面、头像、背景、社区</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="{% url 'ytb' %}">油管相关</a>
                     </div>
                   </div>
+                </div>
 
-				      <div class="col s4">
-				        <div class="card-panel blue-grey intro">
-				          	<div class="card-content white-text">
-					              <h5 class="card-title justify-center">每月的行程汇总</h5>
-					              <p class="yellow_text">帮你检查漏掉的综艺节目，查看你哥每月辉煌的业绩！</p>
-					        </div>
-				        </div>
-				      </div>
+                <div class="col s12 m4">
+                  <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">熟肉</span>
+                      <p>已翻译综艺列表</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="{% url 'video' %}">熟肉分享</a>
+                    </div>
+                  </div>
+                </div>
 
-				      <div class="col s4">
-				        <div class="card-panel blue-grey intro">
-				          	<div class="card-content white-text">
-					              <h5 class="card-title justify-center">熟肉</h5>
-					              <p class="yellow_text">还在为听不懂看不懂却心急没有新综艺的片源吗？</p>
-					        </div>
-				        </div>
-				      </div>
-				</div>
+
+                <div class="col s12 m4">
+                  <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">每月的行程汇总</span>
+                      <p>节目时间表</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="{% url 'schedule' %}">行程安排</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
 					<div class="section scrollspy">
 						<h3 class="header center-align" style="color: #DD4A68;">贡献者</h3>
@@ -116,7 +132,7 @@
 	    <div class="row">
 	      <div class="col l6 s12">
 	        <p class="grey-text text-lighten-4"><a href="http://beian.miit.gov.cn/" style="color:#fff">备案号: 粤ICP备2020094794号-1</a></p>
-	        <p class="grey-text text-lighten-4">Mail: hokyeejau@foxmail.com</p>
+	        <p class="grey-text text-lighten-4"><a class="email" href="#!" data-clipboard-text="hokyeejau@foxmail.com" data-clipboard-action="copy">Mail: hokyeejau@foxmail.com</a></p>
 	      </div>
 	      <div class="col l4 offset-l2 s12">
 	        <ul>

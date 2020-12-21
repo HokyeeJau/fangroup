@@ -6,15 +6,19 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="{% static "materialize/css/materialize.min.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
+	<link href="{% static "css/ytb.css" %}" type="text/css" rel="stylesheet"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <title>油管相关</title>
-    </head>
+      <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "materialize/js/materialize.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/clipboard.min.js" %}"></script>
+    <script src="{% static "js/index.js" %}"></script>
+</head>
 
 <body style ="display: flex;min-height: 100vh;flex-direction: column;"data-new-gr-c-s-check-loaded="14.981.0">
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="js/jquery.min.js"></script>
-      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+      
       <!-- Header -->
 	<header>
 		<nav>
@@ -34,37 +38,71 @@
 	<main>
 		<!-- Main Contributors -->
 		<div class="container ">
-			<div class="album">
-				<div id="head">
+			<div class="row">
+				<!-- 主要内容 -->
+				<div class="col s12 m9 l10">
+					<div id="album">
+						<!-- 头像区 -->
+						<div class="row valign-wrapper">
+							<div class="col s10 left-align"><h4 class="header red-text">头像</h4></div>
+							<div class="col s2"><a href="{% url 'download_ptr' %}" class="waves-effect waves-light red btn">下载</a></div>
+						</div>
+						<div id="portrait">
+							<div class="card-list row">
+								{{portrait_pack|safe}}
+							</div>
+						</div>
 
+						<!-- 背景区 -->
+						<div class="row valign-wrapper">
+							<div class="col s10 left-align"><h4 class="header indigo-text">背景</h4></div>
+							<div class="col s2"><a href="{% url 'download_bg' %}" class="waves-effect waves-light indigo btn">下载</a></div>
+						</div>
+						<div id="bg">
+							<div class="card-list row">
+							   {{background_pack|safe}}
+							</div>
+						</div>
+
+						<!-- 封面区 -->
+						<div class="row valign-wrapper">
+							<div class="col s10 left-align"><h4 class="header orange-text">封面</h4></div>
+							<div class="col s2"><a href="{% url 'download_thn' %}" class="waves-effect waves-light orange btn">下载</a></div>
+						</div>
+						<div id="thumbnail">
+							<div class="card-list row">
+								{{thumbnail_pack|safe}}
+							</div>
+						</div>
+
+						<!-- 社区块 -->
+						<div class="row valign-wrapper">
+							<div class="col s10 left-align"><h4 class="header green-text">社区</h4></div>
+							<div class="col s2"><a href="{% url 'download_cm' %}" class="waves-effect waves-light green btn">下载</a></div>
+						</div>
+						<div id="community">
+							<div class="card-list row">
+								{{community_pack|safe}}
+							</div>
+						</div>
+					</div>
 				</div>
-				<div id="bg"></div>
-				<div id="cover"></div>
-				<div id="community"></div>
+
+				<!-- 导航栏 -->
+				<div class="col hide-on-small-only m3 l2">
+			    	<div class="toc-wrapper pinned" style="top: 0px;">
+				        <div style="height: 1px;">
+							<ul class="section table-of-contents">
+	  				            <li><a href="#portrait" class="">头像</a></li>
+	  				            <li><a href="#bg" class="">背景</a></li>
+	  				            <li><a href="#thumbnail" class="">封面</a></li>
+	  				            <li><a href="#community" class="">社区</a></li>
+  				        	</ul>
+				        </div>
+			    	</div>
+			    </div>
 			</div>
-
 		</div>
-
-
-
-  <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-          <img src="images/sample-1.jpg">
-          <span class="card-title">卡片标题</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <p>我是一个很简单的卡片。我很擅长于包含少量的信息。我很方便，因为我只需要一个小标记就可以有效地使用。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
 	</main>
 
       <!-- Footer of the page -->
@@ -73,7 +111,7 @@
 	    <div class="row">
 	      <div class="col l6 s12">
 	        <p class="grey-text text-lighten-4"><a href="http://beian.miit.gov.cn/">备案号: 粤ICP备2020094794号-1</a></p>
-	        <p class="grey-text text-lighten-4">Mail: hokyeejau@foxmail.com</p>
+	        <p class="grey-text text-lighten-4"><a class="email" data-clipboard-text="hokyeejau@foxmail.com" data-clipboard-action="copy">Mail: hokyeejau@foxmail.com</a></p>
 	      </div>
 	      <div class="col l4 offset-l2 s12">
 	        <ul>

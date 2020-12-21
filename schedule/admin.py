@@ -8,11 +8,11 @@ class ScheduleAdmin(admin.ModelAdmin):
     list_display = ('sche_date', 'sche_title', 'sche_rsc', 'admin',)
     fieldsets = (
         ['Main',{
-            'fields':('sche_date', 'sche_title', 'sche_content', 'sche_rsc'),
+            'fields':('sche_date', 'sche_title', 'sche_content', 'admin'),
         }],
         ['Advance',{
             'classes':('collapse', ), #CSS
-            'fields':('admin',),
+            'fields':('sche_rsc',),
         }]
     )
     # def has_change_permission(self, request, obj=None):

@@ -24,9 +24,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'statics/rsc')
 SECRET_KEY = 'qaxshp@)@^771r3w5(!htp2ez-1!jgs!noqdev3qev_1w41=hm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'khc',
         'HOST':'127.0.0.1',
         'PORT':3306,
-        'USER': 'root',
+        'USER': '',
         'PASSWORD':'',
     }
 }
@@ -128,4 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "statics"),
+    "/usr/local/python3.7.6/lib/python3.7/site-packages/django/contrib/admin/static/",
+    os.path.join(BASE_DIR, "rsc"),
 ]
+STATIC_ROOT = '/home/fangroup/static'

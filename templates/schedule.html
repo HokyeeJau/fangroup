@@ -10,18 +10,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="{% static "css/jazz-timeline.css" %}">
-	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" ></script>
-	<script type="text/javascript" src="{% static "js/index.js" %}">
-
-	</script>
-	<!-- <link href="{% static "js/skrollr.min.js" %}"> -->
+	<!-- <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" ></script> -->
     <title>行程管理</title>
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "materialize/js/materialize.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/clipboard.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/index.js" %}"></script>
     </head>
 
 <body style ="display: flex;min-height: 100vh;flex-direction: column;"data-new-gr-c-s-check-loaded="14.981.0">
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="js/jquery.min.js"></script>
-      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
       <!-- Header -->
 	<header>
 		<nav>

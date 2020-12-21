@@ -5,15 +5,15 @@ from .models import video
 
 class VideoAdmin(admin.ModelAdmin):
     list_per_page = 10
-    list_display = ('vid_date', 'vid_title', 'vid_url',)
+    list_display = ('vid_date', 'vid_title',)
     fieldsets = (
         ['Main', {
-            'fields': ('vid_date', 'vid_title', 'vid_url',),
+            'fields': ('vid_date', 'vid_title','vid_intro', 'admin',),
         }],
         ['Advance', {
             'classes': ('collapse', ),
-            'fields': ('vid_code', 'vid_intro', 'vid_cap_trans', 'vid_lines_trans', \
-                        'vid_axis_prd', 'vid_cover_prd', 'vid_sup_prd', 'admin',),
+            'fields': ('vid_bili_url', 'vid_baidu_url', 'vid_code', 'vid_cap_trans', 'vid_dial_trans', \
+                        'vid_axis_prd', 'vid_cover_prd', 'vid_sup_prd',),
         }]
     )
 

@@ -8,9 +8,13 @@ def schedule(request):
     context = {}
     context['ip'] = get_ip(request)
     context['timeline'] = get_timeline()
-    context['update_time'] = date2str(query_latest().sche_date)
+
+    if query_latest():
+        context['update_time'] = date2str(query_latest().sche_date)
+
     return render(request, 'schedule.html', context)
 
+# Get Client IP
 def get_ip(request):
     forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if forwarded_for:
@@ -44,8 +48,10 @@ def query_all():
 
 # Return Time Line Card
 def get_timeline_card(date, title, content, rsc, idx):
+    a_label = "" if rsc is None else "<a href=\"%s\">🔗</a>" % (rsc)
     color = ['turqoise', 'black', 'bronw', 'indigo', 'purple', 'grey',
                 'blue', 'red', 'orange', 'opal', 'green', 'pink']
+
     template = '<div class="timeline-post %s-post %s-trail"> \
     	<div class="timeline-meta"> \
     		<div class="meta-details">%s</div> \
@@ -57,10 +63,10 @@ def get_timeline_card(date, title, content, rsc, idx):
     		<h2 class="content-title %s-title">%s</h2> \
     		<div class="content-details"> \
     			<p>%s</p> \
-    			<a href=\"%s\">🔗</a> \
+    			%s \
     		</div> \
     	</div><!-- timeline content --> \
-    </div><!-- .timeline-post -->' % (color[idx%12], color[idx%12], date2str(date), color[idx%12], title, content, rsc)
+    </div><!-- .timeline-post -->' % (color[idx%12], color[idx%12], date2str(date), color[idx%12], title, content, a_label)
     return template
 
 def date2str(s):

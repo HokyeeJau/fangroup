@@ -6,21 +6,19 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="{% static "materialize/css/materialize.min.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/video.css" %}">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <title>熟肉分享</title>
-    </head>
-
-    <body style ="display: flex;min-height: 100vh;flex-direction: column;">
       <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="js/jquery.min.js"></script>
-      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-
+    <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "materialize/js/materialize.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/clipboard.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/video.js" %}"></script>
+    <script src="{% static "js/index.js" %}"></script>
+</head>
 
 <body style ="display: flex;min-height: 100vh;flex-direction: column;"data-new-gr-c-s-check-loaded="14.981.0">
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="js/jquery.min.js"></script>
-      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
       <!-- Header -->
   <header>
     <nav>
@@ -40,88 +38,77 @@
   <!-- Main -->
   <main>
     <!-- Main Contributors -->
-    <div class="container" style="width: 90%">
-          <h1 class="header center-align" style="color: #DD4A68;">你来啦</h1>
-          <p class="caption center-align">欢迎来到<a href="https://weibo.com/u/6567264854">聪唧唧</a>的金希澈资源分享网站，在这里，你将能分享到</p>
-
-        <div class="row">
-              <div class="col s4">
-                <div class="card-panel blue-grey intro">
-                    <div class="card-content white-text">
-                        <h5 class="card-title justify-center">Heetube的视频封面、头像与背景</h5>
-                        <p class="yellow_text">希兔比的视频封面、社区的可爱动图、以及曾经出现过的背景与头像，心动吗？</p>
-                  </div>
+    <div class="container">
+        <!-- hidden detail window -->
+        <!-- <div id="bg"></div> -->
+        <div class="pop_main z-depth-4">
+            <div class="pop_con">
+                <div class="pop_title">
+                    <h5>视频详细信息</h5>
                 </div>
-              </div>
-
-              <div class="col s4">
-                <div class="card-panel blue-grey intro">
-                    <div class="card-content white-text">
-                        <h5 class="card-title justify-center">每月的行程汇总</h5>
-                        <p class="yellow_text">帮你检查漏掉的综艺节目，查看你哥每月辉煌的业绩！</p>
-                  </div>
+                <div class="pop_detail">
+                    <table>
+                        <tr>
+                            <td>日期</td>
+                            <td id="vid_date"></td>
+                        </tr>
+                        <tr>
+                            <td>标题</td>
+                            <td id="vid_title"></td>
+                        </tr>
+                        <tr>
+                            <td>介绍</td>
+                            <td id="vid_intro"></td>
+                        </tr>
+                        <tr>
+                            <td>字幕</td>
+                            <td id="vid_cap_trans"></td>
+                        </tr>
+                        <tr>
+                            <td>对白</td>
+                            <td id="vid_dial_trans"></td>
+                        </tr>
+                        <tr>
+                            <td>打轴</td>
+                            <td id="vid_axis_prd"></td>
+                        </tr>
+                        <tr>
+                            <td>精效</td>
+                            <td id="vid_cover_prd"></td>
+                        </tr>
+                        <tr>
+                            <td>压制</td>
+                            <td id="vid_sup_prd"></td>
+                        </tr>
+                    </table>
                 </div>
-              </div>
-
-              <div class="col s4">
-                <div class="card-panel blue-grey intro">
-                    <div class="card-content white-text">
-                        <h5 class="card-title justify-center">熟肉</h5>
-                        <p class="yellow_text">还在为听不懂看不懂却心急没有新综艺的片源吗？</p>
-                  </div>
+                <div class="pop_footer">
+                    <input type="button" value="关闭" class="cancel">
                 </div>
-              </div>
+            </div>
+            <div class="mask"></div>
         </div>
 
-          <div class="section scrollspy">
-            <h3 class="header center-align" style="color: #DD4A68;">贡献者</h3>
-            <p class="caption center-align">下列站子与人员为本网站主要贡献者</p>
-            <h4 class="header center-align"  style="color: #DD4A68;">站子</h4>
-            <div class="row">
-                  <div class="col s12 m6">
-                    <div class="card z-depth-3 blue-grey darken-1 contributor">
-                      <div class="card-content white-text">
-                        <span class="card-title">想打想流KimHeeChul</span>
-                        <p>视频熟肉</p>
-                      </div>
-                      <div class="card-action">
-                        <a href="https://weibo.com/u/6205417173">微博</a>
-                        <a href="https://github.com/xdxl-khc">GitHub</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col s12 m6">
-                    <div class="card z-depth-3 blue-grey darken-1 contributor">
-                      <div class="card-content white-text">
-                        <span class="card-title">HEECHULISM金希澈安利博</span>
-                        <p>行程总结</p>
-                      </div>
-                      <div class="card-action">
-                        <a href="https://weibo.com/u/7037287896">微博</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          </div>
-          <div class="section scrollspy">
-            <h4 class="header center-align"  style="color: #DD4A68;">个人</h4>
-            <div class="row">
-                  <div class="col s12 m6">
-                    <div class="card z-depth-3 blue-grey darken-1 contributor">
-                      <div class="card-content white-text">
-                        <span class="card-title">聪唧唧</span>
-                        <p>油管图片</p>
-                      </div>
-                      <div class="card-action">
-                        <a href="https://weibo.com/u/6567264854">微博</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          </div>
-
+        <!-- video list -->
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th data-field='id'>序号</th>
+                    <th data-field='date'>发布时间</th>
+                    <th data-field='title'>标题</th>
+                    <th data-field='intro'>介绍</th>
+                    <th data-field='baidu_disk'>百度云盘</th>
+                    <th data-field='bilibili'>哔哩哔哩</th>
+                    <th data-field="details">详情</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    {{row|safe}}
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
-
   </main>
 
       <!-- Footer of the page -->
@@ -130,7 +117,7 @@
       <div class="row">
         <div class="col l6 s12">
           <p class="grey-text text-lighten-4"><a href="http://beian.miit.gov.cn/" style="color:#fff">备案号: 粤ICP备2020094794号-1</a></p>
-          <p class="grey-text text-lighten-4">Mail: hokyeejau@foxmail.com</p>
+          <p class="grey-text text-lighten-4"><a class="email" data-clipboard-text="hokyeejau@foxmail.com" data-clipboard-action="copy">Mail: hokyeejau@foxmail.com</a></p>
         </div>
         <div class="col l4 offset-l2 s12">
           <ul>
